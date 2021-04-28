@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;box-sizing: border-box;background-size: 100% 100%;background-repeat: no-repeat;user-select: none;}
+        .wrapper{width: 300px;height: 250px;position: relative;cursor: grab;overflow: hidden;}
+        .absolute{position: absolute;}
+        .patch_box{height: 250px;width: 300px;top: 0;left: 0;transition: all 1s ease-in-out;}
+        .imgBx{position: relative;width: 300px;height: 250px;}
+        .imgBx img:nth-child(1){position: absolute;left: 0;top: 0;width: 300px;height: 250px;transform-origin: left;}
+        .imgBx img:nth-child(2){position: absolute;left: 0;top: 0;width: 300px;height: 250px;transform-origin: left;opacity: 0;}
+        .blur1{
+            z-index: 1;
+            animation: blur1 4s infinite;
+            animation-direction: alternate;
+           -webkit-animation: blur1 4s infinite;-moz-animation: blur1 4s infinite;
+           -webkit-animation-direction: alternate;-moz-animation-direction: alternate;
+           /* -webkit-animation-delay: 1s;-moz-animation-delay: 1s; */
+
+        }
+        .blur2{
+            animation: blur2 4s infinite;
+            /* animation-delay: 1s; */
+            animation-direction: alternate;
+           -webkit-animation: blur2 4s infinite;-moz-animation: blur2 4s infinite;
+           -webkit-animation-direction: alternate;-moz-animation-direction: alternate;
+           -webkit-animation-delay: 1s;-moz-animation-delay: 1s;
+        }
+        /* @keyframes blur1 {
+        0%{
+            transform: perspective(2000px) rotateY(0deg);
+        }
+        100% {
+            transform: perspective(2000px) rotateY(-90deg);
+        };
+        @keyframes blur2 {
+        0%{
+            transform: perspective(2000px) rotateY(0deg);
+        }
+        100% {
+            transform: perspective(2000px) rotateY(-60deg);
+            }  
+        }; */
+        
+        @keyframes blur1 {
+       0%{
+            transform: perspective(2000px) rotateY(0deg);
+         }
+        100% {
+            transform: perspective(2000px) rotateY(-90deg);
+            /* animation-delay: 2s; */
+            }
+        }
+
+        @keyframes blur2 {
+         0%{
+            opacity: 1;
+            transform: perspective(2000px) rotateY(30deg);
+        }
+        100% {
+            opacity: 1;
+            transform: perspective(2000px) rotateY(0deg);
+            }  
+        }
+
+    </style>
+</head>
+<body>
+    <div class="imgBx">
+        <img class="blur1" src="01.jpg">
+        <img class="blur2" src="02.jpg">
+    </div>
+</body>
+</html>
